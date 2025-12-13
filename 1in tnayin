@@ -1,0 +1,23 @@
+a = int(input("Enter a: "))
+if a > 1:
+    count = 0
+    for i in range(1, a + 1):
+        if a % i == 0:
+            count += 1
+    if count == 2:
+        print("Պարզ թիվ է")
+    else:
+        print("Պարզ թիվ չէ")
+else:
+    print("Պարզ թիվ չէ")
+
+
+start =0
+end = 50
+for a in range(start, end + 1):
+    count = 0
+    for i in range(1, a + 1):
+        if a % i == 0:
+            count += 1
+    if count == 2:
+        print(a)
