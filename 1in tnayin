@@ -43,4 +43,41 @@ for name,subjects in students.items():
         subjects_avg[subject].append(grade)
 for subject,grades in subjects_avg.items():
     avg1=sum(grades)/len(grades)
+
+3.wordle game
+
+
+def wordle(secretword):
+	GREEN = "\033[92m"
+	ORANGE = "\033[93m"
+	RESET = "\033[0m"
+	wordletries = 5
+	for attempt in range(wordletries):
+		print()
+		word = input("Enter word: ")
+		if len(word) == 5: 
+			print()
+			if word == secretword:
+				print("You won")
+				break
+			else:
+				for i, letter in enumerate(word):
+					if letter == secretword[i]:
+						print(GREEN + letter + RESET, end = "")
+					elif letter in secretword:
+						print(ORANGE + letter + RESET, end = "")
+					else:
+						print(letter, end = "")
+			if attempt == wordletries - 1:
+				print()
+				print("You lose", end = "")
+				print()
+				break
+		else:
+			print("Word needs to be 5 letters only", end = "")
+			print()
+			attempt = attempt - 1
+
+secretword = "bread"
+wordle(secretword)		
     print(subject,'=',avg1)
